@@ -1,0 +1,10 @@
+<div class="box recent">
+    <h4>Recent Searches:</h4>
+    <div class="listResults">
+        <ul>
+            <li ng-repeat="res in recentResults">
+                <a href="#" ng-click="searchAgain(res)">{{res}}</a>
+            </li>
+        </ul>
+    </div>
+</div>

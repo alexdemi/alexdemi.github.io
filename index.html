@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>SoundCloud</title>
+    
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style/style.css">
+    
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-route.min.js"></script>
+        
+        <script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>
+
+        <script src="app/app.js"></script>
+        
+        <script src="app/search/search.js"></script>
+        <script src="app/results/results.js"></script>
+        <script src="app/recent/recent.js"></script>
+
+        <style>
+            .main-loader {
+                font-size: 10px;
+                text-indent: -9999em;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background: #666666;
+                background: -moz-linear-gradient(left, #bbbbbb 10%, rgba(255, 255, 255, 0) 42%);
+                background: -webkit-linear-gradient(left, #bbbbbb 10%, rgba(255, 255, 255, 0) 42%);
+                background: -o-linear-gradient(left, #bbbbbb 10%, rgba(255, 255, 255, 0) 42%);
+                background: -ms-linear-gradient(left, #bbbbbb 10%, rgba(255, 255, 255, 0) 42%);
+                background: linear-gradient(to right, #bbbbbb 10%, rgba(255, 255, 255, 0) 42%);
+                position: absolute;
+                top: 50%;
+                margin-top: -40px;
+                left: 50%;
+                margin-left: -40px;
+                -webkit-animation: loadrotate 1.4s infinite linear;
+                animation: loadrotate 1.4s infinite linear;
+                -webkit-transform: translateZ(0);
+                -ms-transform: translateZ(0);
+                transform: translateZ(0);
+            }
+
+            .main-loader:before {
+                width: 50%;
+                height: 50%;
+                background: #bbbbbb;
+                border-radius: 100% 0 0 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: '';
+            }
+
+            .main-loader:after {
+                background: #ffffff;
+                width: 75%;
+                height: 75%;
+                border-radius: 50%;
+                content: '';
+                margin: auto;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+            }
+        </style>
+    
+    </head>
+    <body ng-app="myApp">
+    
+        <div class="container">
+            <div ng-view>
+                <div class="main-loader"></div>
+            </div>
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,18 @@
+<div class="box search" ng-controller="searchCtrl">
+    <form ng-submit="search()">
+        <input type="text" placeholder="search" ng-model="query"/>
+        <input type="submit" value="Go"/>
+    </form>
+    <div class="listResults">
+        <div ng-if="searchLoading" class="loader"></div>
+        <ul>
+            <li ng-repeat="res in results.collection">
+                <a href="#" ng-click="selectItem(res)">{{res.title}} </a>
+            </li>
+        </ul>
+        <div ng-if="errorRes" class="error">
+            {{errorRes}}
+        </div>
+    </div>
+    <button ng-if="hasNext" type="button" ng-click="nextResults()">Next</button>
+</div>
